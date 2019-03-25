@@ -1,11 +1,9 @@
 import re
-kunci_jawaban = "selamat datang pada rumah kami"
-jawaban = "sselamattdadatang di rumahhh kami"
 def pisahKata(kunci_jawaban, jawaban):
     d_index = []
     b_index = []
     
-    for i in S_kunci_jawaban:
+    for i in S_kunci_jawaban.split():
         index_replace = [(m.start(0)) for m in re.finditer(i,jawaban)]
         d_index += index_replace
     
@@ -20,4 +18,8 @@ def pisahKata(kunci_jawaban, jawaban):
     jawaban_list = re.sub(r"\s+", " ","".join(jawaban_list).rstrip().strip().lstrip())
     return jawaban_list
 
+
+#Testing
+kunci_jawaban = "selamat datang pada rumah kami"
+jawaban = "sselamattdadatang di rumahhh kami"
 pisahKata(kunci_jawaban, jawaban)
